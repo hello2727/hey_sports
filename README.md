@@ -1,2 +1,12 @@
-# hey_sports
+hey_sports
+==============================
 - 계기 : 동계 올림픽과 월드컵을 맞는 2022년, 2022년 뿐만 아니라 앞으로도 쭉 편하게 스포츠 대회 소식을 많은 사람들이 쉽게 접할 수 있었으면 좋겠다는 생각으로 만들게 된 프로젝트입니다.
+
+사용 툴(=Used Tools)
+-------------------------------
+- Language => Kotlin
+- Di => Hilt
+- view inflate => data binding
+- Log => Timber
+- Navigation | Coroutine | lifecycle | Flow | LiveData
+- RestApi => GraphGL
