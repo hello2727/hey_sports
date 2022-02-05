@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
  * Created by Jihye Noh
  * Date: 2022-02-05
  */
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
