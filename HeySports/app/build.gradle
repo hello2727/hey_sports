@@ -73,8 +73,17 @@ dependencies {
     def coroutineVersion = "1.3.9"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
+    // ExoPlayer
+    def exoplayerVersion = "2.16.1"
+    implementation "com.google.android.exoplayer:exoplayer:$exoplayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-core:$exoplayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion"
+    implementation "com.google.android.exoplayer:exoplayer-hls:$exoplayerVersion"
+    def multidexVersion = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidexVersion"
+
     // GraphQL
-    implementation "com.apollographql.apollo3:apollo-runtime:$graphqlVersion"
+    implementation "com.apollographql.apollo3:apollo-runtime:3.0.0"
     implementation "com.apollographql.apollo:apollo-android-support:$graphqlVersion"
     implementation "com.apollographql.apollo:apollo-coroutines-support:$graphqlVersion"
 

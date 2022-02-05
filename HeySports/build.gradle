@@ -6,7 +6,7 @@ buildscript {
 
     ext.kotlinVersion = "1.6.10"
     ext.hiltVersion = "2.40.5"
-    ext.graphqlVersion = "2.5.2"
+    ext.graphqlVersion = "2.5.11"
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
