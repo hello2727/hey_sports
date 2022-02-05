@@ -9,4 +9,4 @@ hey_sports
 - view inflate => data binding
 - Log => Timber
 - Navigation | Coroutine | lifecycle | Flow | LiveData
-- RestApi => GraphGL
+- RestApi => GraphQL
