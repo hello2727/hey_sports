@@ -8,7 +8,7 @@ hey_sports
 - view inflate => data binding
 - Log => Timber
 - Navigation | Coroutine | lifecycle | Flow | LiveData
-- RestApi => GraphQL
+- RestApi => GraphQL | okhttp3
 - Catching memory leak => LeakCanary
 
 ## Support Function
