@@ -10,3 +10,4 @@ Environment
 - Log => Timber
 - Navigation | Coroutine | lifecycle | Flow | LiveData
 - RestApi => GraphQL
+- Catching memory leak => LeakCanary
