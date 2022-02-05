@@ -5,7 +5,7 @@ hey_sports
 Environment
 -------------------------------
 - Language => Kotlin
-- Di => Hilt
+- Di => Hilt + Dagger
 - view inflate => data binding
 - Log => Timber
 - Navigation | Coroutine | lifecycle | Flow | LiveData
