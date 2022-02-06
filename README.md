@@ -7,7 +7,7 @@ hey_sports
 - Di => Hilt + Dagger
 - view inflate => data binding
 - Log => Timber
-- Navigation | Coroutine | lifecycle | Flow | LiveData
+- Jetpack => Navigation | Coroutine | lifecycle | Flow | LiveData | Exoplayer
 - RestApi => GraphQL | okhttp3
 - Catching memory leak => LeakCanary
 
