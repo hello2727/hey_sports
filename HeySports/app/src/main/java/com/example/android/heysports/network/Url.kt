@@ -1,7 +1,7 @@
-package com.example.android.heysports.util
+package com.example.android.heysports.network
 
 /**
  * Created by Jihye Noh
  * Date: 2022-02-08
  */
-private const val HOME_INTRODUCTION_VIDEO_URL = ""
+const val HOME_INTRODUCTION_VIDEO_URL = "https://www.youtube.com/watch?v=RCP69vBIN6M"

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.android.heysports.R
 import com.example.android.heysports.databinding.FragmentHomeBinding
+import com.example.android.heysports.util.extension.setPlayer
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -39,10 +40,12 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        binding.pvIntroduction.setPlayer(context)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        binding.pvIntroduction.player = null
     }
 }
