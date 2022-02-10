@@ -46,6 +46,6 @@ class HomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-        binding.pvIntroduction.player = null
+//        binding.pvIntroduction.player = null
     }
 }
