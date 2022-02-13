@@ -75,6 +75,8 @@ dependencies {
     def coroutineVersion = "1.3.9"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
+    // Youtube Extractor
+    implementation "com.github.HaarigerHarald:android-youtubeExtractor:2.1.0"
     // ExoPlayer
     def exoplayerVersion = "2.16.1"
     implementation "com.google.android.exoplayer:exoplayer:$exoplayerVersion"
