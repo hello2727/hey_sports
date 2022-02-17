@@ -2,9 +2,11 @@ package com.example.android.heysports.ui.main
 
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.forEach
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -53,6 +55,12 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.S)
     private fun setUpBottomNavigation() {
+        bottomNavView.menu.forEach {
+            bottomNavView.findViewById<View>(it.itemId).setOnLongClickListener {
+                true
+            }
+        }
+
         val navGraphIds = listOf(R.navigation.nav_home)
 
         val controller = bottomNavView.setUpWithNavController(
