@@ -1,8 +1,10 @@
 package com.example.android.heysports.di.part
 
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 /**
  * Created by Jihye Noh
@@ -11,5 +13,9 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModulePart {
-
+    @Provides
+    @Singleton
+    fun getRetrofit(){
+        
+    }
 }
