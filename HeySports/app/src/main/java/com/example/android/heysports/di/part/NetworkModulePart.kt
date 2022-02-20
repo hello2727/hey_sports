@@ -16,6 +16,6 @@ object NetworkModulePart {
     @Provides
     @Singleton
     fun getRetrofit(){
-        
+
     }
 }
