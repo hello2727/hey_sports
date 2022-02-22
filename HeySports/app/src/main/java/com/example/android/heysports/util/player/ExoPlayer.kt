@@ -11,6 +11,19 @@ import timber.log.Timber
  */
 class ExoPlayer : AppCompatActivity() {
     private val playbackStateListener: Player.Listener = playbackStateListener()
+    private var player: ExoPlayer? = null
+
+    private var playWhenReady = true
+    private var currentWindow = 0
+    private var playbackPosition = 0L
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    private fun initializePlayer() {
+
+    }
 }
 
 private fun playbackStateListener() = object : Player.Listener {
