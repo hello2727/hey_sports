@@ -1,7 +1,10 @@
 package com.example.android.heysports.util.player.listener
 
-import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.PlaybackException
 import com.google.android.exoplayer2.Player
+import com.google.android.exoplayer2.upstream.DataSpec
+import com.google.android.exoplayer2.upstream.HttpDataSource
+import com.google.android.exoplayer2.upstream.HttpDataSource.HttpDataSourceException
 import timber.log.Timber
 
 /**
@@ -9,14 +12,29 @@ import timber.log.Timber
  * Date: 2022-02-26
  */
 object PlaybackStateListener : Player.Listener {
-    override fun onPlaybackStateChanged(playbackState: Int) {
-        val stateString: String = when (playbackState) {
-            ExoPlayer.STATE_IDLE -> "ExoPlayer.STATE_IDLE  -"
-            ExoPlayer.STATE_BUFFERING -> "ExoPlayer.STATE_BUFFERING  -"
-            ExoPlayer.STATE_READY -> "ExoPlayer.STATE_READY  -"
-            ExoPlayer.STATE_ENDED -> "ExoPlayer.STATE_ENDED  -"
-            else -> "UNKNOWN_STATE"
+    override fun onIsPlayingChanged(isPlaying: Boolean) {
+        super.onIsPlayingChanged(isPlaying)
+        if (isPlaying) {
+            Timber.d("home video: playing!!")
+        } else {
+            Timber.d("home video: stop~")
         }
-        Timber.d("home video: changed state to $stateString")
+    }
+
+    override fun onPlayerError(error: PlaybackException) {
+        super.onPlayerError(error)
+        val cause: Throwable = error.cause ?: return
+        if (cause is HttpDataSourceException) {
+            val httpError = cause as? HttpDataSourceException ?: return
+            val requestDataSpec: DataSpec = httpError.dataSpec
+
+            if (httpError is HttpDataSource.InvalidResponseCodeException) {
+                // Cast to InvalidResponseCodeException and retrieve the response code,
+                // message and headers.
+            } else {
+                // Try calling httpError.getCause() to retrieve the underlying cause,
+                // although note that it may be null.
+            }
+        }
     }
 }

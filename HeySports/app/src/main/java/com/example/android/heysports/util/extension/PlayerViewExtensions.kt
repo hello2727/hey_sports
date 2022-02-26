@@ -1,50 +1,27 @@
 package com.example.android.heysports.util.extension
 
 import android.content.Context
-import com.example.android.heysports.R
-import com.example.android.heysports.network.HOME_INTRODUCTION_VIDEO_URL
+import android.net.Uri
+import com.example.android.heysports.util.player.listener.PlaybackStateListener
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
-import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
-import com.google.android.exoplayer2.ui.StyledPlayerView
-import com.google.android.exoplayer2.util.MimeTypes
+import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.upstream.DefaultDataSource
 
 /**
  * Created by Jihye Noh
  * Date: 2022-02-07
  */
-fun StyledPlayerView?.initPlayer(
-    context: Context?,
-    currentWindow: Int,
-    playbackPosition: Long,
-    playbackStateListener: Player.Listener
-) {
-    val trackSelector = DefaultTrackSelector(context ?: return).apply {
-        setParameters(buildUponParameters().setMaxVideoSizeSd())
-    }
+fun ExoPlayer.initPlayer(context: Context, url: String) {
+    val dataSourceFactory = DefaultDataSource.Factory(context)
+    val mediaSource = ProgressiveMediaSource.Factory(dataSourceFactory)
+        .createMediaSource(MediaItem.fromUri(Uri.parse(url)))
 
-    ExoPlayer.Builder(context)
-        .setTrackSelector(trackSelector)
-        .build()
-        .also { exoPlayer ->
-            this?.player = exoPlayer
+    this.run {
+        addListener(PlaybackStateListener)
 
-            val mediaItem = MediaItem.fromUri(context.getString(R.string.media_url_dash))
-            this?.player?.apply {
-                setMediaItem(mediaItem)
-                playWhenReady = playWhenReady
-                prepare()
-                play()
-            }
-        }
-}
-
-fun StyledPlayerView?.releasePlayer(
-    playbackStateListener: Player.Listener
-) {
-    this?.player?.run {
-        removeListener(playbackStateListener)
-        release()
+        setMediaSource(mediaSource)
+        prepare()
+        play()
     }
 }
