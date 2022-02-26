@@ -30,16 +30,12 @@ fun StyledPlayerView?.initPlayer(
         .also { exoPlayer ->
             this?.player = exoPlayer
 
-            val mediaItem = MediaItem.Builder()
-                .setUri(context.getString(R.string.media_url_dash))
-                .setMimeType(MimeTypes.APPLICATION_MPD)
-                .build()
-            exoPlayer.apply {
+            val mediaItem = MediaItem.fromUri(context.getString(R.string.media_url_dash))
+            this?.player?.apply {
                 setMediaItem(mediaItem)
                 playWhenReady = playWhenReady
-                seekTo(currentWindow, playbackPosition)
-                addListener(playbackStateListener)
                 prepare()
+                play()
             }
         }
 }
