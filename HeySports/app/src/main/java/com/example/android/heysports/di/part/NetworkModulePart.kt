@@ -13,9 +13,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModulePart {
-    @Provides
-    @Singleton
-    fun getRetrofit(){
-
-    }
+//    @Provides
+//    @Singleton
+//    fun getRetrofit(){
+//
+//    }
 }
