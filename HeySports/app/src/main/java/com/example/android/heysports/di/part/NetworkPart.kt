@@ -12,7 +12,7 @@ import javax.inject.Singleton
  */
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModulePart {
+object NetworkPart {
 //    @Provides
 //    @Singleton
 //    fun getRetrofit(){
