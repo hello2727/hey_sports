@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
  * Created by Jihye Noh
  * Date: 2022-03-01
  */
-data class VideoVo(
+data class SearchVo(
     @SerializedName("kind")
     val kind: String,
 
@@ -16,20 +16,42 @@ data class VideoVo(
     @SerializedName("nextPageToken")
     val nextPageToken: String,
 
-    @SerializedName("prevPageToken")
-    val prevPageToken: String,
+    @SerializedName("regionCode")
+    val regionCode: String,
 
     @SerializedName("pageInfo")
-    val pageInfo: List<ResultVo>,
+    val pageInfo: PageInfoVo,
 
     @SerializedName("items")
-    val items: List<String>
+    val items: List<ItemVo>
 )
 
-data class ResultVo(
+data class PageInfoVo(
     @SerializedName("totalResults")
     val totalResults: Int,
 
     @SerializedName("resultsPerPage")
     val resultsPerPage: Int
+)
+
+data class ItemVo(
+    @SerializedName("kind")
+    val kind: String,
+
+    @SerializedName("etag")
+    val etag: String,
+
+    @SerializedName("id")
+    val id: IdVo
+)
+
+data class IdVo(
+    @SerializedName("kind")
+    val kind: String,
+
+    @SerializedName("videoId")
+    val videoId: String?,
+
+    @SerializedName("channelId")
+    val channelId: String?
 )

@@ -1,5 +1,7 @@
 package com.example.android.heysports.di.part
 
+import com.example.android.heysports.HeyApplication
+import com.example.android.heysports.R
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +20,7 @@ object NetworkPart {
     @Provides
     @Singleton
     fun getRetrofitClient(): Retrofit = Retrofit.Builder()
-        .baseUrl(YOUTUBE_API)
+        .baseUrl(HeyApplication.getContext().getString(R.string.youtube_api))
         .addConverterFactory(getGson())
         .build()
 
@@ -26,6 +28,3 @@ object NetworkPart {
     @Singleton
     fun getGson(): GsonConverterFactory = GsonConverterFactory.create()
 }
-
-private val YOUTUBE_API =
-    "https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=AIzaSyDGqNg6oN-YBQr2DKAX1j4Om9L5i5r1Xvk&part=snippet,contentDetails,statistics,status"
