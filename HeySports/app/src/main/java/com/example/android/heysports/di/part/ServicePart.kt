@@ -1,8 +1,12 @@
 package com.example.android.heysports.di.part
 
+import com.example.android.heysports.network.services.YoutubeSearchService
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Retrofit
+import javax.inject.Named
 
 /**
  * Created by Jihye Noh
@@ -11,5 +15,8 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object ServicePart {
-
+    @Provides
+    fun provideYoutubeSearchService(@Named("YoutubeSearch") retrofit: Retrofit): YoutubeSearchService {
+        return retrofit.create(YoutubeSearchService::class.java)
+    }
 }

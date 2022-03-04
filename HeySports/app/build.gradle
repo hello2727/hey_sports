@@ -89,7 +89,7 @@ dependencies {
     implementation "com.apollographql.apollo:apollo-android-support:$graphqlVersion"
     implementation "com.apollographql.apollo:apollo-coroutines-support:$graphqlVersion"
 
-    // Retrofit + gson + okhttp3
+    // Retrofit + gson + okhttp3 + RxJava
     def retrofitVersion = "2.9.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
@@ -97,6 +97,8 @@ dependencies {
     implementation "com.google.code.gson:gson:$retrofitVersion"
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation "com.squareup.okhttp3:logging-interceptor:4.8.1"
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
 
     // LeakCanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1'
