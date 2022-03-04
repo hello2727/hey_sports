@@ -10,6 +10,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
 import javax.inject.Singleton
@@ -27,6 +28,7 @@ object NetworkPart {
     fun getRetrofitClient(gson: Gson, @ApplicationContext context: Context): Retrofit =
         Retrofit.Builder()
             .baseUrl(HeyApplication.getContext().getString(R.string.youtube_api))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(getGson())
             .build()
 
