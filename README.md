@@ -8,7 +8,7 @@ hey_sports
 - view inflate => data binding
 - Log => Timber
 - Jetpack => Navigation | Coroutine | lifecycle | Flow | LiveData | Exoplayer
-- RestApi => Retrofit | Gson | okhttp3 ::GraphQl은 추후에... {공부더하고 난 후}
+- RestApi => Retrofit | Gson | okhttp3 | RxJAVA ::GraphQl은 추후에... {공부더하고 난 후}
 - API => Youtube Api
 - Catching memory leak => LeakCanary
 
