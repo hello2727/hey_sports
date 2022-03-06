@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.android.heysports.R
 import com.example.android.heysports.databinding.FragmentHomeBinding
 import com.example.android.heysports.network.HOME_INTRODUCTION_VIDEO_URL
 import com.example.android.heysports.util.extension.initPlayer
 import com.google.android.exoplayer2.ExoPlayer
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
 /**
  * Created by Jihye Noh
@@ -48,6 +52,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initPlayer()
+        collectFlows()
     }
 
     override fun onPause() {
@@ -67,8 +72,18 @@ class HomeFragment : Fragment() {
         player.release()
     }
 
-    private fun initPlayer() {
+    private fun initPlayer(url: String = HOME_INTRODUCTION_VIDEO_URL) {
         binding.videoView.player = player
-        player.initPlayer(requireContext(), HOME_INTRODUCTION_VIDEO_URL)
+        player.initPlayer(requireContext(), url)
+    }
+
+    private fun collectFlows() {
+        lifecycleScope.launch {
+            with(viewModel) {
+                introductionVideo.collect {
+                    Timber.d("searchList", it.toString())
+                }
+            }
+        }
     }
 }

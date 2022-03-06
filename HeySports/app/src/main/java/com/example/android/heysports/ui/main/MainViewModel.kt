@@ -14,7 +14,6 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class MainViewModel @Inject constructor(
-
 ) : ViewModel() {
     private val scope = viewModelScope + CoroutineExceptionHandler { _, e ->
         Timber.e(e.toString())

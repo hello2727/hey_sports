@@ -8,50 +8,47 @@ import com.google.gson.annotations.SerializedName
  */
 data class SearchVo(
     @SerializedName("kind")
-    val kind: String,
+    val kind: String?,
 
     @SerializedName("etag")
-    val etag: String,
+    val etag: String?,
 
     @SerializedName("nextPageToken")
-    val nextPageToken: String,
+    val nextPageToken: String?,
 
     @SerializedName("regionCode")
-    val regionCode: String,
+    val regionCode: String?,
 
     @SerializedName("pageInfo")
-    val pageInfo: PageInfoVo,
+    val pageInfo: PageInfoVo?,
 
     @SerializedName("items")
-    val items: List<ItemVo>
+    val items: List<ItemVo>?
 )
 
 data class PageInfoVo(
     @SerializedName("totalResults")
-    val totalResults: Int,
+    val totalResults: Int = 0,
 
     @SerializedName("resultsPerPage")
-    val resultsPerPage: Int
+    val resultsPerPage: Int = 0
 )
 
 data class ItemVo(
     @SerializedName("kind")
-    val kind: String,
+    val kind: String?,
 
     @SerializedName("etag")
-    val etag: String,
+    val etag: String?,
 
     @SerializedName("id")
-    val id: IdVo
+    val id: IdVo?
 )
 
 data class IdVo(
     @SerializedName("kind")
-    val kind: String,
+    val kind: String?,
 
     @SerializedName("videoId")
-    val videoId: String?,
-
-    @SerializedName("channelId")
-    val channelId: String?
+    val videoId: String?
 )
