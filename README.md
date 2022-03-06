@@ -5,6 +5,7 @@ hey_sports
 ## Setting Environment
 - Language => Kotlin
 - Di => Hilt + Dagger
+- Design Pattern => MVVM | AAC
 - view inflate => data binding
 - Log => Timber
 - Jetpack => Navigation | Coroutine | lifecycle | Flow | LiveData | Exoplayer
