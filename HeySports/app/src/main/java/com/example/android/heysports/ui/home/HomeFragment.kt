@@ -1,6 +1,8 @@
 package com.example.android.heysports.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +10,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import at.huber.youtubeExtractor.VideoMeta
+import at.huber.youtubeExtractor.YouTubeExtractor
+import at.huber.youtubeExtractor.YtFile
 import com.example.android.heysports.R
 import com.example.android.heysports.databinding.FragmentHomeBinding
 import com.example.android.heysports.network.HOME_INTRODUCTION_VIDEO_URL
+import com.example.android.heysports.network.videoUrl
 import com.example.android.heysports.util.extension.initPlayer
 import com.google.android.exoplayer2.ExoPlayer
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,7 +57,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initPlayer()
+        extractYoutubeUrl()
         collectFlows()
     }
 
@@ -70,6 +76,20 @@ class HomeFragment : Fragment() {
         _binding = null
 
         player.release()
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private fun extractYoutubeUrl() {
+        object : YouTubeExtractor(requireContext()) {
+            override fun onExtractionComplete(
+                sparseArray: SparseArray<YtFile>?,
+                videoMeta: VideoMeta?
+            ) {
+                sparseArray?.let {
+                    initPlayer(it[1].url)
+                } ?: initPlayer()
+            }
+        }.extract(videoUrl, true, true)
     }
 
     private fun initPlayer(url: String = HOME_INTRODUCTION_VIDEO_URL) {

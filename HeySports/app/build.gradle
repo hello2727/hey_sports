@@ -84,6 +84,9 @@ dependencies {
     def multidexVersion = "2.0.1"
     implementation "androidx.multidex:multidex:$multidexVersion"
 
+    // Youtube Url Extractor
+    implementation "com.github.HaarigerHarald:android-youtubeExtractor:2.1.0"
+
     // GraphQL
     implementation "com.apollographql.apollo3:apollo-runtime:3.0.0"
     implementation "com.apollographql.apollo:apollo-android-support:$graphqlVersion"
