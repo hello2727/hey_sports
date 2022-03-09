@@ -53,7 +53,7 @@ class HomeViewModel @Inject constructor(
     }
 
     companion object {
-        private const val VIDEO_KEYWORD = "olympic"
+        private const val VIDEO_KEYWORD = "olympic highlights"
         private const val DEFAULT_VIDEO_ID = "p6E9R9qv1No"
     }
 }
