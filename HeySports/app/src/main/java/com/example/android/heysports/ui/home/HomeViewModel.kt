@@ -33,7 +33,7 @@ class HomeViewModel @Inject constructor(
     private suspend fun getIntroVideoId(keyword: String) {
         event(
             Event.SetVideoIdEvent(
-                searchRepo.getSearchVideoList(keyword)?.items?.get(1)?.id?.videoId
+                searchRepo.getSearchVideoList(keyword)?.items?.get(0)?.id?.videoId
                     ?: DEFAULT_VIDEO_ID
             )
         )
