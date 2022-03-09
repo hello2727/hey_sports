@@ -50,5 +50,5 @@ data class IdVo(
     val kind: String?,
 
     @SerializedName("videoId")
-    val videoId: String?
+    val videoId: String? = ""
 )

@@ -7,5 +7,5 @@ import com.example.android.heysports.network.services.YoutubeSearchService
  * Date: 2022-03-05
  */
 class YoutubeSearchRepository(private val service: YoutubeSearchService) {
-    suspend fun getSearchVideoList() = service.getSearchVideoList().body()
+    suspend fun getSearchVideoList(q: String) = service.getSearchVideoList(q = q).body()
 }

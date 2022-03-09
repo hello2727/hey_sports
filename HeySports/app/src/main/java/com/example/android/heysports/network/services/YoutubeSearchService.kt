@@ -17,6 +17,7 @@ interface YoutubeSearchService {
     suspend fun getSearchVideoList(
         @Query("key") key: String = HeyApplication.getContext().getString(R.string.youtube_key),
         @Query("id") id: String = HeyApplication.getContext()
-            .getString(R.string.youtube_channel_olympics_id)
+            .getString(R.string.youtube_channel_olympics_id),
+        @Query("q") q: String = "",
     ): Response<SearchVo?>
 }

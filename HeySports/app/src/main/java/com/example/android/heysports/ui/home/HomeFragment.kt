@@ -16,7 +16,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 /**
  * Created by Jihye Noh
@@ -79,14 +78,15 @@ class HomeFragment : Fragment() {
 
     private fun collectFlows() {
         lifecycleScope.launch {
-            with(viewModel) {
-                introductionVideo.collect {
-                    Timber.d("searchList", it.toString())
-                }
-                introVideoId.collect { videoId ->
-                    setIntroVideo(videoId)
-                }
+            viewModel.eventFlow.collect {
+                handleEvent(it)
             }
+        }
+    }
+
+    private fun handleEvent(event: HomeViewModel.Event) = when (event) {
+        is HomeViewModel.Event.SetVideoIdEvent -> {
+            setIntroVideo(event.keyword)
         }
     }
 
