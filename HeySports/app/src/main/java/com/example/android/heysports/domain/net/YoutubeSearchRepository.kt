@@ -1,4 +1,4 @@
-package com.example.android.heysports.network.repo
+package com.example.android.heysports.domain.net
 
 import com.example.android.heysports.network.services.YoutubeSearchService
 

@@ -12,10 +12,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.android.heysports.R
 import com.example.android.heysports.databinding.ActivityMainBinding
-import com.example.android.heysports.network.repo.YoutubeSearchRepository
 import com.example.android.heysports.util.extension.setUpWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 

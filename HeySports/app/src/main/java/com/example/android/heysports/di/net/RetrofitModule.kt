@@ -1,4 +1,4 @@
-package com.example.android.heysports.di.part
+package com.example.android.heysports.di.net
 
 import android.content.Context
 import androidx.databinding.ktx.BuildConfig
@@ -25,7 +25,7 @@ import javax.inject.Singleton
  */
 @Module
 @InstallIn(SingletonComponent::class)
-object RetrofitPart {
+object RetrofitModule {
     @Provides
     @Singleton
     @Named("YoutubeSearch")

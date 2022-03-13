@@ -2,7 +2,7 @@ package com.example.android.heysports.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.android.heysports.network.repo.YoutubeSearchRepository
+import com.example.android.heysports.domain.net.YoutubeSearchRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableSharedFlow
