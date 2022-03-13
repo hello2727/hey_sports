@@ -14,13 +14,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/intro_video"
+            android:name="com.google.android.youtube.player.YouTubePlayerFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
+            android:layout_height="300dp"
+            app:autoPlay="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:showFullScreenButton="false"
+            app:videoId="p6E9R9qv1No" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/intro_video">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_container"
@@ -34,18 +46,6 @@
                 <!--                    app:clipCornerToRound="@{10}"-->
                 <!--                    app:resize_mode="fill"-->
                 <!--                    tools:ignore="MissingConstraints" />-->
-
-                <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                    android:id="@+id/intro_video"
-                    android:name="com.google.android.youtube.player.YouTubePlayerFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    app:autoPlay="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:showFullScreenButton="false"
-                    app:videoId="p6E9R9qv1No" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
