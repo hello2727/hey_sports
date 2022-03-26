@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">헤이!스포츠</string>
 
+    <!-- bottomNavigation -->
     <string name="nav_home">홈</string>
+
+    <!-- Home -->
+    <string name="game_schedule">경기일정 (대회)</string>
+    <string name="worldcup">월드컵</string>
+    <string name="olympic">올림픽</string>
 </resources>
