@@ -30,6 +30,14 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun onOlympicClick(){
+
+    }
+
+    fun onWorldCupClick(){
+
+    }
+
     private suspend fun getIntroVideoId(keyword: String) {
         event(
             Event.SetVideoIdEvent(

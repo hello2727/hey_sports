@@ -27,43 +27,50 @@
             app:showFullScreenButton="false"
             app:videoId="p6E9R9qv1No" />
 
+        <TextView
+            android:id="@+id/tv_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:padding="15dp"
+            android:text="@string/game_schedule"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/intro_video"
+            tools:ignore="SpUsage" />
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/intro_video">
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp">
-
-                <TextView
-                    android:id="@+id/tv_schedule"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/game_schedule"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpUsage" />
+                android:layout_height="match_parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_olympic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_schedule">
+                    android:background="?android:attr/selectableItemBackground"
+                    android:onClick="@{() -> model.onOlympicClick()}"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
                         android:id="@+id/iv_olympic"
-                        android:layout_width="130dp"
+                        android:layout_width="110dp"
                         android:layout_height="80dp"
+                        android:layout_marginStart="20dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_olympic"
                         app:clipCornerToRound="@{10}"
@@ -74,8 +81,7 @@
                         android:id="@+id/tv_olympic"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:gravity="end"
+                        android:gravity="center_horizontal"
                         android:text="@string/olympic"
                         android:textSize="15dp"
                         android:textStyle="normal"
@@ -93,12 +99,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:onClick="@{() -> model.onWorldCupClick()}"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
                     app:layout_constraintTop_toBottomOf="@id/cl_olympic">
 
                     <ImageView
                         android:id="@+id/iv_worldcup"
-                        android:layout_width="130dp"
+                        android:layout_width="110dp"
                         android:layout_height="80dp"
+                        android:layout_marginStart="20dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_worldcup"
                         app:clipCornerToRound="@{10}"
@@ -109,8 +120,7 @@
                         android:id="@+id/tv_worldcup"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:gravity="end"
+                        android:gravity="center_horizontal"
                         android:text="@string/worldcup"
                         android:textSize="15dp"
                         android:textStyle="normal"

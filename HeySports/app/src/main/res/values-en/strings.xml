@@ -6,7 +6,7 @@
     <string name="nav_home">home</string>
 
     <!-- Home -->
-    <string name="game_schedule">Game Schedule (Competition)</string>
+    <string name="game_schedule">Game Schedule</string>
     <string name="worldcup">WorldCup</string>
     <string name="olympic">Olympic</string>
 </resources>
